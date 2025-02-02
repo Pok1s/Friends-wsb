@@ -1,4 +1,8 @@
 # Friends-wsb
+
+
+web-site url - https://friendsrate.org
+
 command for deploy 
 
 
