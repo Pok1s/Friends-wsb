@@ -1,0 +1,21 @@
+@import '../../styles/mixins.module';
+@import '../../styles/utils.module.scss';
+
+.navbar{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 26px 24px 28px;
+}
+
+.active{
+    fill: $main-blue;
+}
+
+.notActive{
+    fill: #696862;
+}

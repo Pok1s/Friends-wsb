@@ -1,0 +1,15 @@
+@import '../../../styles/mixins.module';
+
+.authorized {
+  @include mainBlock;
+
+  &-call {
+    @include mainBlock;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__content {
+    background-color: transparent;
+  }
+}

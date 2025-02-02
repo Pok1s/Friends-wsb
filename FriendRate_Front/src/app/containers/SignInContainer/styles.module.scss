@@ -1,0 +1,630 @@
+@import '../../styles/utils.module';
+@import '../../styles/mixins.module';
+
+@mixin btn {
+  @content;
+  width: 50%;
+  padding: 4px 0;
+  flex-shrink: 0;
+  border-radius: 6px;
+  border: none;
+  background: $main-blue;
+  color: $main-beige;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+@mixin bottom {
+  padding-bottom: calc(50px - 24px);
+}
+
+.content {
+  height: 100vh;
+  padding: 32px 0 20px 0;
+
+  &__block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+.head {
+  color: $main-beige;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+
+  @include onAppleProMax {
+    padding-bottom: 34.95px;
+  }
+
+  @include onApplePro {
+    padding-bottom: 31.95px;
+  }
+
+  @include onApple {
+    padding-bottom: 31.65px;
+  }
+
+  @include onAppleMiniAndEight {
+    padding-bottom: 30.45px;
+  }
+}
+
+.head-restore {
+  color: $main-beige;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  padding-bottom: 26px;
+
+  @include onAppleProMax {
+    padding-bottom: 72.81px;
+  }
+
+  @include onApplePro {
+    padding-bottom: 66.56px;
+  }
+
+  @include onApple {
+    padding-bottom: 65.94px;
+  }
+
+  @include onAppleMiniAndEight {
+    padding-bottom: 63.44px;
+  }
+  
+}
+
+.signupBtn {
+  display: block;
+  margin: 0 auto;
+
+    @include mainBtn;
+    margin-top: 10px;
+    width: 100%;
+    line-height: 24px;
+    user-select: none;
+    
+    @include onAppleProMax {
+      margin-top: calc(143.59px - 25px);
+    }
+
+    @include onApplePro {
+      margin-top: calc(113.84px - 25px);
+    }
+
+    @include onApple {
+      margin-top: calc(110.86px - 25px);
+    }
+
+    @include onAppleMiniAndEight {
+      margin-top: calc(98.96px - 25px);
+    }
+
+    &:active {
+      background: $background-button-active;
+    }
+
+    &:disabled {
+      @include mainBtn;
+      padding: 16px 0;
+      margin-top: 10px;
+      width: 100%;
+      background: $disable-button-color;
+      cursor: not-allowed;
+
+      @include onAppleProMax {
+        margin-top: calc(143.59px - 25px);
+      }
+
+      @include onApplePro {
+        margin-top: calc(113.84px - 25px);
+      }
+
+      @include onApple {
+        margin-top: calc(110.86px - 25px);
+      }
+
+      @include onAppleMiniAndEight {
+        margin-top: calc(98.96px - 25px);
+      }
+    }
+}
+
+.smallButton1 {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+
+  @include btn;
+  width: 52%;
+}
+
+.smallButton2 {
+  position: absolute;
+  right: 0;
+
+  @include btn;
+  width: 52%;
+}
+
+.secondaryButton{
+  position: absolute;
+  width: 52%;
+  left: 0;
+
+  @include btn;
+  background-color: $disable-switch-color;
+  color: $color-beige-50;
+}
+
+.secondaryButton2{
+  position: absolute;
+  width: 52%;
+  right: 0;
+
+  @include btn;
+  background-color: $disable-switch-color;
+  color: $color-beige-50;
+}
+
+.imputForm{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.imputForm-new-password{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 40px;
+}
+
+.field{
+  width: 100%;
+
+  @include inputField;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+
+
+.field-restore{
+  width: 100%;
+    @include inputField;
+
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+
+    &__error {
+      width: 100%;
+      @include inputField;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 24px;
+      border: 1px solid #BA4242;
+    }
+}
+
+.fieldLabel{
+  padding-left: 8px;
+  color: $main-beige;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.block-password {
+  position: relative;
+}
+
+.icon{
+  position: absolute;
+  background: rgba(77, 76, 73, 0.1);
+  top: 25%;
+  right: 6px;
+  cursor: pointer;
+}
+
+.checkbox{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 12px;
+  padding-left: 8px;
+}
+
+.checkboxTxt{
+  color: $color-beige-50;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 150%; 
+  letter-spacing: 0.1px;
+}
+
+.errMes{
+  margin-top: 4px;
+  margin-left: 8px;
+  color: #BA4242;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.1px;
+}
+
+.signInTxt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 7px;
+  color: $main-beige;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 150%;
+
+    @include onAppleProMax {
+      margin-top: 8px;
+    }
+
+    @include onApplePro {
+      margin-top: 8px;
+    }
+
+    @include onApple {
+      margin-top: 8px;
+    }
+
+    @include onAppleMiniAndEight {
+      margin-top: 8px;
+    }
+}
+
+.line {
+  flex: 1 1 auto;
+  height: 1px;
+  background-color: $main-beige;
+}
+
+.socialBox{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 11px;
+
+  @include onAppleProMax {
+    padding-top: 14px;
+  }
+
+  @include onApplePro {
+    padding-top: 14px;
+  }
+
+  @include onApple {
+    padding-top: 14px;
+  }
+
+  @include onAppleMiniAndEight {
+    padding-top: 14px;
+  }
+}
+
+.socialIcon{
+  display: flex;
+  flex-direction: column;
+}
+
+.socialTxt{
+  color: $main-beige;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.bottomTxt{
+  color: $color-beige-50;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.reset {
+  margin-top: 8px;
+  padding-left: 8px;
+  color: #BA4242;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 15px;
+  letter-spacing: 0.1px;
+  text-align: start;
+
+  @include onAppleProMax {
+    padding-top: 33.46px;
+  }
+
+  @include onApplePro {
+    padding-top: 26.21px;
+  }
+
+  @include onApple {
+    padding-top: 25.49px;
+  }
+
+  @include onAppleMiniAndEight {
+    padding-top: 22.59px;
+  }
+
+  &__link {
+    color: #FCFBF5;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 15px;
+    letter-spacing: 0.1px;
+    text-decoration-line: underline;
+  }
+}
+
+.errorPasword {
+  padding: 0 8px;
+  width: 100%;
+  @include inputField;
+  border-color: #BA4242;
+}
+
+.description {
+  padding-bottom: 18px;
+
+  @include onAppleProMax {
+    padding-bottom: 80.05px;
+  }
+
+  @include onApplePro {
+    padding-bottom: 63.05px;
+  }
+
+  @include onApple {
+    padding-bottom: 61.35px;
+  }
+
+  @include onAppleMiniAndEight {
+    padding-bottom: 54.55px;
+  }
+}
+
+.description-restore {
+  padding-bottom: 16px;
+  color: #FCFBF5;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+  @include onAppleProMax {
+    padding-bottom: 66.19px;
+  }
+
+  @include onApplePro {
+    padding-bottom: 52.44px;
+  }
+
+  @include onApple {
+    padding-bottom: 51.06px;
+  }
+
+  @include onAppleMiniAndEight {
+    padding-bottom: 45.56px;
+  }
+}
+
+.description-new-password {
+  padding-bottom: 24px;
+  color: #FCFBF5;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+  @include onAppleProMax {
+    padding-bottom: 86.05px;
+  }
+
+  @include onApplePro {
+    padding-bottom: 69.05px;
+  }
+
+  @include onApple {
+    padding-bottom: 67.35px;
+  }
+
+  @include onAppleMiniAndEight {
+    padding-bottom: 60.55px;
+  }
+}
+
+.content-bottom {
+  margin-bottom: 40px;
+
+  @include onAppleProMax {
+    margin-bottom: 48.21px;
+  }
+
+  @include onApplePro {
+    margin-bottom: 45.96px;
+  }
+
+  @include onApple {
+    margin-bottom: 45.74px;
+  }
+
+  @include onAppleMiniAndEight {
+    margin-bottom: 44.84px;
+  }
+}
+
+.forgetPassword {
+  display: inline-block;
+  padding-top: 7px;
+  padding-left: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: underline;
+
+  @include onAppleProMax {
+    padding-top: 33.46px;
+  }
+
+  @include onApplePro {
+    padding-top: 26.21px;
+  }
+
+  @include onApple {
+    padding-top: 25.49px;
+  }
+
+  @include onAppleMiniAndEight {
+    padding-top: 22.59px;
+  }
+}
+
+.button-bottom {
+  margin-bottom: 59px;
+  color: #FCFBF5;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+
+  @include onAppleProMax {
+    margin-bottom: 178.54px;
+  }
+
+  @include onApplePro {
+    margin-bottom: 145.79px;
+  }
+
+  @include onApple {
+    margin-bottom: 142.51px;
+  }
+
+  @include onAppleMiniAndEight {
+    margin-bottom: 129.41px;
+  }
+}
+
+.confirm-rule {
+  padding-left: 8px;
+  padding-top: 4px;
+  // padding-bottom: 94px;
+  color: rgba(252, 251, 245, 0.50);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.1px;
+
+  @include onAppleMiniAndEight {
+    padding-bottom: 0;
+  }
+
+  @include onApple {
+    padding-bottom: 0;
+  }
+  
+  @include onApplePro {
+    padding-bottom: 0;
+  }
+
+  @include onAppleProMax {
+    padding-bottom: 0;
+  }
+}
+
+.block-submit {
+  margin-top: calc(136px - 16px);
+
+  @include onAppleProMax {
+    margin-top: calc((266px - 143.59px ) - 16px);
+  }
+
+  @include onApplePro {
+    margin-top: calc((226px - 113.84px) - 16px);
+  }
+
+  @include onApple {
+    margin-top: calc((222px - 110.86px) - 16px);
+  }
+
+  @include onAppleMiniAndEight {
+    margin-top: calc((206px - 98.96px) - 16px);
+  }
+}
+
+.check {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($color: #000, $alpha: 0.45);
+
+    &__content {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 16px 30px 16px;
+      border-radius: 10px 10px 0 0;
+
+      @include onAppleProMax {
+        padding: 120px 16px 60px 16px;
+      }
+
+      @include onApplePro {
+        padding: 120px 16px 60px 16px;
+      }
+
+      @include onApple {
+        padding: 120px 16px 60px 16px;
+      }
+
+      @include onAppleMiniAndEight {
+        padding: 120px 16px 60px 16px;
+      }
+    }
+
+    &__desc{
+      color: #FCFBF5; 
+      text-align: center;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 32px; 
+    }
+}

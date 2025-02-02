@@ -1,0 +1,33 @@
+@import '../../../styles/mixins.module';
+
+.block-button {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+
+  @include onAppleMiniAndEight {
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+
+  @include onApple {
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+
+  @include onApplePro {
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+
+  @include onSamsungA30s {
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+
+  @include onAppleProMax {
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+}

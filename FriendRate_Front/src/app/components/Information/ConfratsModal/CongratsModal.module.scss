@@ -1,0 +1,44 @@
+@import '../../../styles/utils.module';
+@import '../../../styles/mixins.module';
+
+.congratsBlock{
+    position: relative;
+    margin-top: 120px;
+    z-index: 1;
+    width: 320px;
+}
+
+.congratsImg{
+    position: absolute;
+    top: -56px;
+    right: 79px;
+    z-index: -1;
+}
+
+.congratsHead{
+    color: $main-beige;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5; 
+    text-transform: uppercase;
+
+}
+
+.congratsTxt{
+    margin-top: 10px;
+    color: $main-beige;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+.congratsBtn{
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mainBtn;
+    width: calc(100% - 32px) !important;
+}

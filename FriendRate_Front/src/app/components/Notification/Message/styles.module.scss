@@ -1,0 +1,10 @@
+@import '../../../styles/utils.module';
+
+.message {
+  color: $main-beige;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  background-color: transparent;
+}

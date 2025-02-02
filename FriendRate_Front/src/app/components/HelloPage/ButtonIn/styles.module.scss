@@ -1,0 +1,29 @@
+@import '../../../styles/_variables';
+
+.button-in {
+  border-radius: 10px;
+  padding: 16px 0;
+  color: $color-title;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  border: 3px solid $color-title;
+  background-color: $background-main;
+  user-select: none;
+
+  &:active {
+    background: #6E6E6E;
+    border-color: $color-title
+  }
+
+  &:disabled {
+    color: $disabled-button-in;
+    border-color: $disabled-button-in;
+
+    &:active {
+      background-color: $background-main;
+    }
+  }
+}

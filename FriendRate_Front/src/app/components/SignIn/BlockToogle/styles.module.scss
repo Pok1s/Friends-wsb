@@ -1,0 +1,22 @@
+@import '../../../styles/mixins.module';
+
+.block-toggle {
+  position: relative;
+  height: 32px;
+
+  @include onAppleProMax {
+    margin-bottom: 64.15px;
+  }
+
+  @include onApplePro {
+    margin-bottom: 53.15px;
+  }
+  
+  @include onApple {
+    margin-bottom: 52.05px;
+  }
+
+  @include onAppleMiniAndEight {
+    margin-bottom: 47.65px;
+  }
+}

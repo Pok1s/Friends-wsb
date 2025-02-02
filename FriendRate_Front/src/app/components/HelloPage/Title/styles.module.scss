@@ -1,0 +1,15 @@
+@import '../../../styles/_variables';
+@import '../../../styles/mixins.module';
+
+.title {
+  color: $color-title;
+  font-size: 24px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+
+  @include onGalaxyFold {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,48 @@
+@import '../styles/mixins.module';
+.main {
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 36px 0 40px 0;
+
+  @include onAppleProMax {
+    padding: 64px 0 40px 0;
+  }
+
+  @include onSamsungA30s {
+    padding: 62px 0 40px 0;
+  }
+
+  @include onApple {
+    padding: 60px 0 40px 0;
+  }
+
+  @include onApplePro {
+    padding: 60px 0 40px 0;
+  }
+
+  @include onAppleMiniAndEight {
+    padding: 56px 0 40px 0;
+  }
+}
+
+.none-registration {
+  text-align: center;
+  color: rgba(252, 251, 245, 0.50);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+}
+.footerDevelopers{
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  color: rgba(252, 251, 245, 0.50);
+}

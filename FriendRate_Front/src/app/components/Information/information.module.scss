@@ -1,0 +1,116 @@
+@import '../../styles/utils.module';
+@import '../../styles/mixins.module';
+
+.infoHead{
+  margin-top: calc(24px + (100vh - 640px)/7.25);
+  color:  $main-beige;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%; 
+}
+
+.imputForm{
+    margin-top: calc(8px + (100vh - 640px)/3.1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .field{
+    @include inputField
+  }
+
+  .fieldLabel{
+    position: relative;
+    margin-top: 24px;
+    color: $main-beige;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7; 
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+
+  .errMes{
+    margin-top: 4px;
+    margin-left: 8px;
+    color: $color-beige-50;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%; 
+    letter-spacing: 0.1px;
+    color: var(--Error, #BA4242);
+  }
+
+ 
+    .fieldErr{
+      @include inputField;
+      border-color: #BA4242;
+    }
+  
+
+  .continueBtn{
+    @include mainBtn;
+    margin-top: calc(62px + (100vh - 640px)/3);
+    &:disabled {
+      @include mainBtn;
+      margin-top: calc(62px + (100vh - 640px)/3);
+      background-color: $disable-button-color;
+      cursor: not-allowed;
+    }
+  }
+
+  .genderBox{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 38px;
+    padding-top: 24px;
+    padding-left: 60px;
+    padding-right: 60px;
+    gap: 32px;
+  }
+
+  .genderItem{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .genderTxt{
+    color: $main-beige;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 2.4; 
+  }
+
+  .boxTxt{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $main-beige;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 2; 
+  }
+
+  .bottomLine{
+    margin: 0 auto;
+    margin-top: 44px;
+    width: 120px;
+    height: 4px;
+    border-radius: 100px;
+    background: $main-beige;
+  }
+
+  .nonPresedImg{
+    fill: none;
+    stroke: $main-beige;
+  }
+
+  .presedImg{
+    fill: #FCFBF5;
+    stroke:black;
+
+  }

@@ -1,0 +1,38 @@
+@import '../../../styles/utils.module';
+@import '../../../styles/mixins.module';
+
+.modalHead{
+    margin-top: 56px;
+    color: $main-beige;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.starBox{
+    margin-top: 47px;
+    display: flex;
+    gap: 24px;
+}
+
+
+.confirmBtn{
+    position: absolute;
+    bottom: 72px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mainBtn;
+    width: calc(100% - 32px) !important;
+    background-color: $background-button-active;
+    z-index: 10;
+    &:disabled {
+        @include mainBtn;
+        background-color: $disable-button-color;
+        cursor: not-allowed;
+        z-index: 0;
+      }
+    
+}
+
+

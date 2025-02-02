@@ -1,0 +1,114 @@
+.connect {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+
+    &-block {
+      position: relative;
+      width: 100%;
+      height: 80%;
+      z-index: 1;
+      background-color: transparent;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 103px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+  }
+
+  &__text {
+    position: absolute;
+    top: 450px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  &__timer {
+    color: #fff;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    background-color: transparent;
+    z-index: 1;
+  }
+
+  &__call {
+    display: flex;
+    gap: 56px;
+    z-index: 1;
+    background-color: transparent;
+
+    &-end {
+      background: transparent;
+    }
+  }
+
+  &__gradient {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 283px;
+    height: 312px;
+    border-radius: 312px;
+    background: #858BD7;
+    filter: blur(54.95000076293945px);
+    mix-blend-mode: overlay;
+
+    transform: translate(-30%, 0);
+
+    &-right {
+      position: absolute;
+      top: 30%;
+      left: -50%;
+      width: 334px;
+      height: 314px;
+      flex-shrink: 0;
+      border-radius: 334px;
+      background: #2F368D;
+      filter: blur(54.95000076293945px);
+      mix-blend-mode: overlay;
+
+      transform: translate(20%, -30%);
+    }
+
+    &-bottom {
+      position: absolute;
+      top: 40%;
+      left: 30%;
+      width: 382px;
+      height: 409px;
+      flex-shrink: 0;
+      border-radius: 409px;
+      background: #C7CCFF;
+      filter: blur(54.95000076293945px);
+      mix-blend-mode: overlay;
+
+      // transform: translate(-30%, 0);
+    }
+
+  }
+  &__btn-block {
+    display: flex;
+    gap: 56px;
+  }
+}

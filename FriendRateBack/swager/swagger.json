@@ -1,0 +1,770 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "FriendRate",
+    "description": "This is a sample documentation for the FriendRate application based on OpenApi 3.0.1. This documentation provides access to the core functionalities of our service. The API enables you to retrieve and send data, manage resources, and interact with the application. We continuously work on improving it, updating, and expanding its functionality. Please review our documentation to learn how to get started with our API and seamlessly integrate it into your projects.",
+    "license": {
+      "name": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  },
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Development server"
+    },
+    {
+      "url": "https://whispering-falls-70384-f5d92e367b77.herokuapp.com",
+      "description": "Publishing server"
+    }
+  ],
+
+  "tags": [{ "name": "Auth", "description": "Authorization endpoints" }],
+
+  "paths": {
+    "/api/user/register": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Register a new user",
+        "parameters": [],
+        "requestBody": {
+          "description": "Registration user",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/RegistrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Succesful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#components/schemas/RegistrationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request (invalid request body)",
+            "content": {}
+          },
+          "409": {
+            "description": "Email already use",
+            "content": {}
+          },
+          "500": {
+            "description": "Server error",
+            "content": {}
+          }
+        }
+      }
+    },
+
+    "/api/user/login": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Login an account",
+        "parameters": [],
+        "requestBody": {
+          "description": "Login's object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#components/schemas/LoginResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request (invalid request body)",
+            "content": {}
+          },
+          "401": {
+            "description": "Email or password is wrong",
+            "content": {}
+          },
+          "500": {
+            "description": "Server error",
+            "content": {}
+          }
+        }
+      }
+    },
+
+    "/api/user/delete/:_id": {
+      "delete": {
+        "tags": ["Auth"],
+        "summary": "Delete User",
+        "security": [{ "Bearer": [] }],
+        "parameters": [],
+        "requestBody": {
+          "description": "Login's object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/DeleteRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User deleted successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#components/schemas/DeleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request (invalid request body)",
+            "content": {}
+          },
+          "500": {
+            "description": "Server error",
+            "content": {}
+          }
+        }
+      }
+    },
+
+    "/api/user/logout": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Logout",
+        "security": [{ "Bearer": [] }],
+        "parameters": [{ "in": "path", "name": "_id" }],
+        "responses": {
+          "204": {
+            "description": "Logout success",
+            "content": {}
+          },
+          "400": {
+            "description": "Bad request (invalid request body)",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "500": {
+            "description": "Server error",
+            "content": {}
+          }
+        }
+      }
+    },
+
+    "/api/user/current": {
+      "get": {
+        "tags": ["Auth"],
+        "summary": "Get info about current user",
+        "security": [{ "Bearer": [] }],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Operation success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#components/schemas/CurrentUserResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "500": {
+            "description": "Server error",
+            "content": {}
+          }
+        }
+      }
+    },
+
+    "/api/user/get-all-rate": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Get info about all users",
+        "security": [{ "Bearer": [] }],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Operation success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#components/schemas/CurrentUserResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "500": {
+            "description": "Server error",
+            "content": {}
+          }
+        }
+      }
+    },
+
+
+    "/api/user/update": {
+      "patch": {
+        "tags": ["Auth"],
+        "summary": "Update user's data",
+        "parameters": [],
+        "security": [{ "Bearer": [] }],
+        "requestBody": {
+          "description": "Update user's data",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/UpdateUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#components/schemas/UpdateUserResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request (invalid request body)",
+            "content": {}
+          },
+          "404": {
+            "description": "Page not found",
+            "content": {}
+          },
+          "500": {
+            "description": "Server error",
+            "content": {}
+          }
+        }
+      }
+    },
+
+    "/api/user/avatars": {
+      "patch": {
+        "tags": ["Auth"],
+        "summary": "Update user's avatar image",
+        "parameters": [],
+        "security": [{ "Bearer": [] }],
+        "requestBody": {
+          "description": "Update's object avatar",
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "avatarURL": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Update user avatar image success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAvatarUserResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request (invalid request body)",
+            "content": {}
+          },
+          "404": {
+            "description": "File is absent",
+            "content": {}
+          },
+          "500": {
+            "description": "Server error",
+            "content": {}
+          }
+        }
+      }
+    },
+
+    "/api/user/forgot-password": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Send reset password email",
+        "parameters": [],
+        "requestBody": {
+          "description": "Forgot password request",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Password reset email sent successfully",
+            "content": {}
+          },
+          "400": {
+            "description": "Bad request (invalid request body)",
+            "content": {}
+          },
+          "404": {
+            "description": "User not found",
+            "content": {}
+          },
+          "500": {
+            "description": "Server error",
+            "content": {}
+          }
+        }
+      }
+    },
+
+    "/api/user/reset-password/{resetToken}": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Reset user password",
+        "parameters": [
+          {
+            "name": "resetToken",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "658600812106590a0fa53b0f"
+          }
+        ],
+        "requestBody": {
+          "description": "Reset password request",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Password reset successful",
+            "content": {}
+          },
+          "400": {
+            "description": "Bad request (invalid request body or passwords do not match)",
+            "content": {}
+          },
+          "401": {
+            "description": "Invalid or expired reset token",
+            "content": {}
+          },
+          "404": {
+            "description": "User not found",
+            "content": {}
+          },
+          "500": {
+            "description": "Server error",
+            "content": {}
+          }
+        }
+      }
+    }
+  },
+
+  "components": {
+    "schemas": {
+      "RegistrationRequest": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email",
+            "example": "user11@mail.com",
+            "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+          },
+          "password": {
+            "type": "string",
+            "description": "User's password",
+            "example": "user-11.password12345678"
+          }
+        }
+      },
+      "RegistrationResponse": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "object",
+            "properties": {
+              "_id": {
+                "type": "string",
+                "description": "User's id",
+                "example": "658403f367c68f1d83745893"
+              },
+              "token": {
+                "type": "string",
+                "description": "User's token after sign-in",
+                "example": null
+              },
+              "avatarURL": {
+                "type": "string",
+                "description": "User's avatar",
+                "example": "www.gravatar.com/avatar/45dd51eb2d3932cb0c09947211a19ff6?s=200&r=pg&d=mm"
+              },
+              "email": {
+                "type": "string",
+                "description": "User's email",
+                "format": "email",
+                "example": "user11@mail.com",
+                "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+              },
+              "createdAt": {
+                "type": "string",
+                "description": "DateTime of creating user",
+                "example": "2023-12-21T09:22:59.612Z"
+              },
+              "updatedAt": {
+                "type": "string",
+                "description": "DateTime of last updating user",
+                "example": "2023-12-22T19:53:52.702Z"
+              }
+            }
+          }
+        }
+      },
+
+      "LoginRequest": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email",
+            "example": "user11@mail.com",
+            "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+          },
+          "password": {
+            "type": "string",
+            "description": "User's password",
+            "example": "user-11.password12345678"
+          }
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "object",
+            "properties": {
+              "_id": {
+                "type": "string",
+                "description": "User's id",
+                "example": "658403f367c68f1d83745893"
+              },
+              "username": {
+                "type": "string",
+                "description": "User's name",
+                "example": "user11"
+              },
+              "email": {
+                "type": "string",
+                "description": "User's email",
+                "format": "email",
+                "example": "user11@mail.com",
+                "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+              },
+              "avatarURL": {
+                "type": "string",
+                "description": "Link image users avatar",
+                "example": "http://res.cloudinary.com/dk3glcvlk/image/upload/v1703232977/avatars/my_avatar_image.png"
+              },
+              "gender": {
+                "type": "string",
+                "description": "Gender (women || man || other)",
+                "enum": ["women", "man", "other"],
+                "example": "man"
+              },
+              "birthday": {
+                "type": "string",
+                "description": "User's birthday",
+                "example": "01.01.2000"
+              },
+              "createdAt": {
+                "type": "string",
+                "description": "DateTime of creating user",
+                "example": "2023-12-21T09:22:59.612Z"
+              },
+              "updatedAt": {
+                "type": "string",
+                "description": "DateTime of last updating user",
+                "example": "2023-12-22T19:53:52.702Z"
+              }
+            }
+          },
+          "token": {
+            "type": "string",
+            "description": "Access token",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ODQwM2YzNjdjNjhmMWQ4Mzc0NTg5MyIsImlhdCI6MTcwMzY2MzU4NywiZXhwIjoxNzA2MjU1NTg3fQ.IJ3PeR6jLf-Lub_rvo4CorBheFFG3VnQ4GZYGo4IRcs"
+          }
+        }
+      },
+
+      "DeleteRequest": {
+        "type": "object",
+        "required": ["_id"],
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "User's _id",
+            "format": "_id",
+            "example": "65fb3a4eb32aa7c5c20107c8"
+          }
+        }
+      },
+      "DeleteResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Message indicating successful deletion",
+            "example": "User deleted successfully"
+          }
+        }
+      },
+
+      "RestorePasswordRequest": {
+        "type": "object",
+        "required": ["email"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email",
+            "example": "user11@mail.com",
+            "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+          }
+        }
+      },
+
+      "CurrentUserResponse": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "User's id",
+            "example": "658403f367c68f1d83745893"
+          },
+          "avatarURL": {
+            "type": "string",
+            "description": "User's avatar",
+            "example": "https://res.cloudinary.com/dgntfoibi/image/upload/v1716558614/avatars/hxhkxndhdxp8tdpxngdz.jpg"
+          },
+          "verify": {
+            "type": "boolean",
+            "example": "false"
+          },
+          "username": {
+            "type": "string",
+            "description": "User's name",
+            "example": "User11_1"
+          },
+          "about": {
+            "type": "string",
+            "description": "User's about",
+            "example": "something about me"
+          },
+          "birthday": {
+            "type": "string",
+            "description": "User's birthday",
+            "example": "02.04.1986"
+          },
+          "language": {
+            "type": "string",
+            "example": ["ENG", "UKR", "УКР", "АНГЛ"]
+          },
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email",
+            "example": "user11@mail.com",
+            "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+          },
+          "gender": {
+            "type": "string",
+            "example": ["Male", "Female", "Other", "Чоловік", "Жінка", "Інше"]
+          },
+          "rate": {
+            "type": "number",
+            "description": "User's rate",
+            "example": 619
+          },
+          "ratingCount": {
+            "type": "number",
+            "description": "User's ratingCount",
+            "example": 136
+        }
+      }
+      },
+
+      "UpdateUserRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "User's name",
+            "example": "User11"
+          },
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email",
+            "example": "user11@mail.com",
+            "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+          },
+          "gender": {
+            "type": "string",
+            "description": "User's gender: [\"girl\", \"man\"]",
+            "enum": ["girl", "man"],
+            "example": "man"
+          },
+          "birthday": {
+            "type": "string",
+            "description": "User's birthday",
+            "example": "01.01.2000"
+          }
+        }
+      },
+      "UpdateUserResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "User's name",
+            "example": "User11_1_updateName"
+          },
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email",
+            "example": "user11@mail.com",
+            "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+          },
+          "gender": {
+            "type": "string",
+            "description": "Gender (girl || man)",
+            "enum": ["girl", "man"],
+            "example": "man"
+          }
+        }
+      },
+
+      "UpdateAvatarUserRequest": {
+        "type": "object",
+        "required": ["_id", "avatar"],
+        "properties": {
+          "avatar": {
+            "type": "file",
+            "format": "binary"
+          }
+        }
+      },
+      "UpdateAvatarUserResponse": {
+        "type": "object",
+        "properties": {
+          "avatarURL": {
+            "type": "string",
+            "format": "binary",
+            "example": "http://avatar_link.com"
+          }
+        }
+      },
+
+      "ForgotPasswordRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "User's email",
+            "example": "user11@mail.com"
+          }
+        },
+        "required": ["email"]
+      },
+      "ResetPasswordRequest": {
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string",
+            "description": "New password",
+            "example": "New_password123"
+          },
+          "confirmPassword": {
+            "type": "string",
+            "description": "Confirm new password",
+            "example": "New_password123"
+          }
+        },
+        "required": ["password", "confirmPassword"]
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../../styles/utils.module';
+
+.button {
+  border-radius: 10px;
+  padding: 16px 0;
+  color: $main-beige;
+  background: $main-blue;
+  border: none;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  user-select: none;
+  text-transform: uppercase;
+
+  &:active {
+    background-color: $background-button-active;
+  }
+}

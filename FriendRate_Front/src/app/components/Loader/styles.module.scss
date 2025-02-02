@@ -1,0 +1,13 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 0;
+  // background-color: rgba($color: #fff, $alpha: 0.1);
+
+  &__spinner {
+    height: 30px;
+    width: 30px;
+  }
+}

@@ -1,0 +1,135 @@
+@import '../../styles/utils.module';
+
+.profile {
+  height: 100vh;
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 0 60px 0;
+    height: 100vh;
+  }
+
+  &__block {
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 8px;
+      margin-bottom: 25px;
+    }
+
+    &-image {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    &-edit {
+      display: flex;
+      gap: 16px;
+      padding-left: 8px;
+      padding-bottom: 23px;
+      border-bottom: 1px solid $main-beige;
+    }
+
+    &-rate {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 9px;
+    }
+  }
+
+  &__image-change {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 31.924px;
+    height: 31.923px;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    background-color: rgba($color: #31333880, $alpha: 0.5);
+  }
+
+  &__upload {
+    background-color: rgba($color: #31333880, $alpha: 0);
+    cursor: pointer;
+  }
+
+  &__opacity {
+    display: none;
+  }
+
+  &__number {
+    color: $main-beige;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  &__edit-profile {
+    display: block;
+    padding: 0 16px;
+    width: 96px;
+    border: 1px solid $main-beige;
+    border-radius: 8px;
+    color: $main-beige;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: capitalize;
+
+      &:active {
+        background: #6E6E6E;
+      }
+  }
+
+  &__inform {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 20px 18px 20px;
+
+    &-value {
+      color: $main-beige;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 8px;
+    margin-bottom: 38px;
+    flex: 1 0 auto;
+  }
+
+  &__feedback {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+    
+  }
+
+  &__link {
+    color: $main-beige;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.12px;
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,33 @@
+@keyframes spinner {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.circle-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  animation: spinner 4s forwards infinite;
+  opacity: 0;
+}
+
+@for $i from 1 through 16 {
+  .circle:nth-child(#{$i}) {
+    animation-delay: $i * 0.1s;
+  }
+}

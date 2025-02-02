@@ -1,0 +1,217 @@
+@import '../../styles/mixins.module';
+@import '../../styles/utils.module.scss';
+
+
+
+.head{
+  margin-top: calc(24px + (100vh - 640px)/7.25);
+  color: $main-beige;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; 
+ 
+}
+
+
+.signupBtn{
+    @include mainBtn;
+    &:disabled {
+      @include mainBtn;
+      background-color: $disable-button-color;
+      cursor: not-allowed;
+    }
+}
+
+
+.btnBox { 
+   
+    display: flex;
+    margin: 0 auto; 
+    margin-top: 32px;
+    position: relative;
+    height: 32px;
+  }
+  
+  .smallButton1 {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 52%;
+    @include smalBtn;
+  }
+  
+  .smallButton2 {
+    position: absolute;
+    right: 0;
+    width: 52%;
+    @include smalBtn;
+    
+
+  }
+
+  .secondaryButton{
+    position: absolute;
+    width: 50%;
+    left: 0;
+    @include smalBtn;
+    background-color: $disable-switch-color;
+    color: $color-beige-50;
+  }
+
+  .secondaryButton2{
+    position: absolute;
+    width: 50%;
+    right: 0;
+    @include smalBtn;
+    background-color: $disable-switch-color;
+    color: $color-beige-50;
+  }
+
+  .imputForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: calc(8px + (100vh - 640px)/7.25);
+  }
+
+  .field{
+    @include inputField;
+  }
+
+  .fieldErr{
+    @include inputField;
+    border-color: #BA4242;
+  }
+
+  .fieldLabel{
+    position: relative;
+    margin-top: 2px;
+    margin-left: 8px;
+    color: $main-beige;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7; 
+  }
+
+
+  .icon{
+    position: absolute;
+    top: 150%;
+    right: 5%;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+
+
+  .checkbox{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-top: 12px;
+    padding-left: 8px;
+  }
+
+  .checkboxTxt{
+    color: $color-beige-50;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 150%; 
+    letter-spacing: 0.1px;
+  }
+
+  .errMes{
+    margin-top: 0;
+    margin-left: 8px;
+    color: #BA4242;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%; 
+    letter-spacing: 0.1px;
+  }
+
+  .passText{
+    margin-top: 4px;
+    margin-left: 8px;
+    color: $color-beige-50;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%; 
+    letter-spacing: 0.1px;
+  }
+  
+
+  .signInTxt {
+    position: relative;
+    margin-top: 1.3vh;
+    color: $main-beige;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 150%;
+    z-index: 1;
+    
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      height: 1px;
+      background-color: $main-beige;
+      margin: 8px ;
+    }
+  
+    &::before {
+      width: calc(50% - 56px); 
+      left: 0;
+    }
+  
+    &::after {
+      width: calc(50% - 56px); 
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .socialBox{
+    margin-top: 2.5vh;
+    display: flex;
+    justify-content: space-around
+  }
+
+  .socialIcon{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .socialTxt{
+    color: $main-beige;
+    margin-left: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 2;
+  }
+
+
+  .bottomTxt{
+    color: $color-beige-50;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 2; 
+
+  }
+
+  .bottomBox{
+    margin-top: calc(14px + (100vh - 640px) /3);
+
+  }
+
+  .tearms{
+    color: $main-beige;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0.12px;
+    text-decoration-line: underline;
+  }

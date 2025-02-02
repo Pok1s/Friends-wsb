@@ -1,0 +1,128 @@
+@import 'utils.module.scss';
+
+@mixin mainBtn(){
+    display: flex;
+    padding: 16px ;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: none;
+    background: $main-blue;
+    color: $main-beige;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+@mixin smalBtn {
+    display: flex;
+    height: 32px;
+    padding: 4px 0;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: none;
+    background: $main-blue;
+    color: $main-beige;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.7; 
+    cursor: pointer;
+}
+
+@mixin inputField {
+    display: flex;
+    padding: 12px 18px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid $main-beige;
+    background: $color-beige-10;
+    outline: none;
+    color: $main-beige;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: $main-beige;
+      transition: background-color 5000s ease-in-out 1s;
+    }
+}
+
+@mixin onGalaxyFold {
+  @media (width: 280px) {
+    @content;
+  }
+}
+
+@mixin onAppleMiniAndEight {
+  @media ((min-width: 361px) and (max-width: 375px)) {
+    @content;
+  }
+}
+
+@mixin onApple {
+  @media ((min-width: 390px) and (max-width: 392px)) {
+    @content;
+  }
+}
+
+@mixin onApplePro {
+  @media (width: 393px) {
+    @content;
+  }
+}
+
+@mixin onSamsungA30s {
+  @media (width: 412px) {
+    @content;
+  }
+}
+
+@mixin onAppleProMax {
+  @media ((min-width: 413px) and (max-width: 430px)) {
+    @content;
+  }
+}
+
+@mixin stroke {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 244px;
+  height: 244px;
+
+  background-image: url(../images/call-base.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+}
+
+@mixin circle {
+  position: relative;
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background-color: #4753AB;
+  box-shadow:
+    0 0 14px 0 rgba(71, 83, 171, 1),
+    0 0 14px -2px rgba(255, 255, 255, 1);
+}
+
+@mixin mainBlock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+
+  transform: translate(-50%, -53%);
+}

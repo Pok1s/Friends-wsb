@@ -1,0 +1,23 @@
+@import '../../../styles/mixins.module';
+
+.block-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include onAppleProMax {
+    gap: 0;
+  }
+
+  @include onApplePro {
+    gap: 0;
+  }
+
+  @include onApple {
+    gap: 0;
+  }
+
+  @include onAppleMiniAndEight {
+    gap: 0;
+  }
+}

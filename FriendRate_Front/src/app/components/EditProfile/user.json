@@ -1,0 +1,11 @@
+{
+    "UserData": {
+      "username": "JohnDoe",
+      "email": "johndoe@example.com",
+      "birthday": "01.01.1990",
+      "gender": "Male",
+      "password": "securepassword123",
+      "passwordRepeat": "securepassword123",
+      "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+  }

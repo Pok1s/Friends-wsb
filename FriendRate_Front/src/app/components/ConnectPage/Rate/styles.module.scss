@@ -1,0 +1,25 @@
+.rate {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  top: -10%;
+  left: 50%;
+  width: 56px;
+  height: 24px;
+  background-color: #4753AB;
+  border-radius: 6px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #fff;
+
+  transform: translate(-50%);
+}
+
+.star {
+  background-color: transparent;
+}

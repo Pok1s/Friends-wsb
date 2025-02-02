@@ -1,0 +1,83 @@
+@import '../../../styles/mixins.module';
+@import '../../../styles/utils.module.scss';
+
+.fieldLabel{
+    position: relative;
+    margin-top: 4px;
+    margin-left: 8px;
+    color: $main-beige;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7; 
+  }
+
+.customSelect{
+    @include inputField;
+    cursor:pointer;
+    position: relative; 
+  }
+
+  .customSelect::after {
+    content: ""; 
+    position: absolute; 
+    top: 50%; 
+    right: 15px; 
+    transform: translateY(-50%); 
+    width: 20px; 
+    height: 12px; 
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M18 2.03406L10.1374 10" stroke="%23FCFBF5" stroke-width="3" stroke-linecap="round"/><path d="M2 2L9.8626 9.96596" stroke="%23FCFBF5" stroke-width="3" stroke-linecap="round"/></svg>');
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+.customSelectOpen{
+    @include inputField;
+    cursor:pointer;
+    position: relative; 
+    
+ }
+
+ .customSelectOpen::after {
+  content: ""; 
+  position: absolute; 
+  top: 20px; 
+  right: 15px; 
+  width: 20px; 
+  height: 12px; 
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M18 9.96596L10.1374 2" stroke="%23FCFBF5" stroke-width="3" stroke-linecap="round"/><path d="M2 9.96596L9.8626 2" stroke="%23FCFBF5" stroke-width="3" stroke-linecap="round"/></svg>');
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+ .options{
+    background: rgba(80, 78, 66, 0.1);
+  }
+
+  .options2{
+    background: rgba(80, 78, 66, 0.1);
+  
+  }
+
+  .selected {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    line-height: 3;
+    border-radius: .25em;
+   
+  }
+  
+  .selected::after {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 20px;
+    height: 12px;
+    
+    pointer-events: none;
+    transition: .25s all ease;
+  }

@@ -1,0 +1,86 @@
+@import '../../styles/mixins.module';
+@import '../../styles/utils.module.scss';
+
+.rateBox {
+    height: calc(100vh - 60px);
+    overflow: overlay;
+}
+.ratehead{
+    color: $main-beige;
+    margin-top: 32px;
+    margin-left: 24px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%; 
+}
+
+.rateList{
+    margin-top: 40px;
+}
+
+.evenBackground {
+    background-color: rgba(56, 59, 66, 1);
+  }
+
+.rateCard{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 32px 10px 24px;
+    &:nth-child(2n) {
+        background-color: rgba(56, 59, 66, 1);
+      }
+}
+
+.imgWrap{
+    border-radius: 50%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.rateName{
+    justify-self: start;
+    margin-left: 17px;
+    color: $main-beige;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7; 
+    text-transform: capitalize;
+    background: inherit;
+}
+.rateNumber{
+    margin-left: 8px;
+    color: $main-beige;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 2; 
+}
+
+
+
+.rating{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 75px;
+    color: $main-beige;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 2; 
+    background: inherit;
+}
+
+.ratingStar{
+    margin-right: 2px;
+}
+
+.numberOfRatings {
+    position: absolute;
+    right: 32px;
+    justify-self: end;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 2; 
+    background: inherit;
+  }

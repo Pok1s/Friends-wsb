@@ -1,0 +1,36 @@
+@import '../../../styles/mixins.module';
+
+.hello-image {
+  width: 181px;
+  height: 169px;
+
+  @include onAppleProMax {
+    width: 251px;
+    height: 246px;
+  }
+
+  @include onApplePro {
+    width: 214px;
+    height: 224px;
+  }
+
+  @include onApple {
+    width: 211px;
+    height: 222px;
+  }
+
+  @include onApplePro {
+    width: 211px;
+    height: 222px;
+  }
+
+  @include onAppleMiniAndEight {
+    width: 196px;
+    height: 214px;
+  }
+
+  @include onGalaxyFold {
+    width: 181px;
+    height: 169px;
+  }
+}

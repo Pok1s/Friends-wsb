@@ -1,0 +1,101 @@
+@import '../../styles/mixins.module';
+@import '../../styles/utils.module.scss';
+
+.editHeaad{
+    margin-top: 32px;
+    margin-left: 8px;
+    color: $main-beige;;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1; 
+}
+
+.fieldLabel{
+  position: relative;
+  margin-top: 8px;
+  margin-left: 8px;
+  color: $main-beige;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7; 
+}
+
+.genderLangBox{
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+
+.genderLangBox > :nth-child(3n) {
+  margin-top: 16px;
+}
+
+.inputForm{
+
+    display: flex;
+    flex-direction: column;
+    // margin-top: calc(8px + (100vh - 640px)/7.25);
+  }
+
+.field{
+    @include inputField;
+    
+    width: 100%;
+  }
+
+
+  .fieldLabelM32{
+    margin-top: 18px;
+    margin-left: 8px;
+    color: $main-beige;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7; 
+  }
+
+  .icon{
+    position: absolute;
+    top: 150%;
+    right: 5%;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  .saveBtn{
+    margin-top: 36px;
+    @include mainBtn;
+    &:disabled {
+      @include mainBtn;
+      background-color: $disable-button-color;
+      cursor: not-allowed;
+    }
+}
+
+.deleteBtn{
+    margin-top: 32px;
+    padding-bottom: 50px;
+    color: $color-error;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5; 
+    cursor: pointer;
+
+}
+
+
+.fieldErr{
+  @include inputField;
+  border-color: #BA4242;
+}
+
+.errMes{
+  margin-top: 0;
+  margin-left: 8px;
+  color: #BA4242;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%; 
+  letter-spacing: 0.1px;
+}

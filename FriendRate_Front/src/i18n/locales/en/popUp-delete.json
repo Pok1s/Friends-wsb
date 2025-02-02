@@ -1,0 +1,9 @@
+{
+  "title": "Delete your account",
+  "service": "I don´t want to use this service",
+  "account": "I have another account",
+  "problem": "This service has some problems",
+  "description": "*All the data will be deleted permanently from our service, including your",
+  "description2": "profile, information, photo",
+  "delete": "Delete my account"
+}

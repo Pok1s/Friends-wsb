@@ -1,0 +1,67 @@
+@import '../../styles/utils.module';
+@import '../../styles/mixins.module';
+
+.modalHead{
+    margin-top: 16px;
+    color: $main-beige;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5; 
+    text-transform: uppercase;
+}
+
+.warningMes{
+    position: absolute;
+    margin-top: 24px;
+    margin-left: 8px;
+    color: $color-error;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: transparent;
+    line-height: 150%;
+    letter-spacing: 0.12px;
+    z-index: 10;
+}
+
+.deleteBtn{
+    position: absolute;
+    bottom: 72px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mainBtn;
+    width: calc(100% - 32px) !important;
+    background-color: $color-error;
+    z-index: 10;
+    &:disabled {
+        @include mainBtn;
+        background-color: #794646;
+        cursor: not-allowed;
+        z-index: 0;
+      }
+    
+}
+
+.BoxWithCheckBox{
+    margin-top: 32px;
+    margin-left: 8px;
+}
+
+.checkbox{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-top: 23px;
+    padding-left: 8px;
+    &:first-child{
+        margin: 0;
+    }
+  }
+
+ .checkboxTxt{
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7; 
+    letter-spacing: 0.1px;
+ }

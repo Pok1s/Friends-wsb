@@ -1,0 +1,18 @@
+@import '../../../styles/_mixins.module.scss';
+
+.stroke {
+  @include stroke;
+
+  &-group {
+    @include stroke;
+      width: 92px;
+      height: 92px;
+      background-image: url(../../../images/stroke-group.svg);
+      border-radius: 50%;
+  }
+}
+
+.stroke-hidden {
+  @include stroke;
+  background: transparent;
+}

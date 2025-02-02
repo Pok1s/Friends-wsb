@@ -1,0 +1,23 @@
+{
+  "title": "Create new account",
+  "signUp": "Sign Up",
+  "signIn": "Sign In",
+  "email": "Email",
+  "password": "Password",
+  "plholdEmail": "Please enter your email address",
+  "plholdPassword": "Please enter your password",
+  "errorValidEmail": "Please enter a valid email address.",
+
+  "errorEmail": "This email address is already used. Please choose a different email address",
+  "errorPassword": "The password must be 8-30 characters long and contain at least one digit, one lowercase letter, one uppercase letter, and one special character.",
+  "confirm": "Confirm your password",
+  "errorConfirm": "Passwords do not match. Please re-enter your password",
+  "emptyErrorConfirm": "Please confirm your password",
+  "terms": "I agree to the ",
+  "terms2": "Terms & Conditions",
+  "terms3": "Privacy Policy",
+  "terms4": "and",
+  "continue": "Continue",
+  "textOrSign": "or Sign in with",
+  "linkSignIn": "Already have an account?"
+}

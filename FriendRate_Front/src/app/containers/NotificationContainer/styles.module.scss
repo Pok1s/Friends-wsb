@@ -1,0 +1,58 @@
+@import '../../styles/utils.module';
+
+.notification {
+  position: relative;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 32px;
+  }
+
+  &__padding {
+    padding: 0 24px;
+    margin-bottom: 40px;
+  }
+
+  &__message {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba($color: #FCFBF51A, $alpha: 0.1);
+    gap: 16px;
+    padding: 10px 24px;
+    background-color: #383B42;
+
+    &-asread {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      border-bottom: 1px solid rgba($color: #FCFBF51A, $alpha: 0.1);
+      gap: 16px;
+      padding: 10px 24px;
+    }
+  }
+
+  &__type {
+    background-color: transparent;
+  }
+
+  &__image {
+    background-color: transparent;
+  }
+
+  &__user {
+    background-color: transparent;
+  }
+
+  &__link {
+    color: $main-beige;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    text-decoration-line: underline;
+    background-color: transparent;
+  }
+}

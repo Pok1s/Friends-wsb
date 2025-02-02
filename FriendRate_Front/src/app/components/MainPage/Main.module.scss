@@ -1,0 +1,107 @@
+@import '../../styles/mixins.module';
+@import '../../styles/utils.module.scss';
+
+.container{
+    height: 100%;
+    padding: 0 16px;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainLogo{
+    display: flex;
+    align-self: start;
+}
+
+.mainImage{
+    margin-top: 14px;
+}
+
+.mainTxt{
+    margin-top: 12px;
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7; 
+}
+
+.ageTxt{
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7; 
+}
+
+.customSelectContainer{
+   display: flex;
+    flex-direction: column; 
+    width: 100%;
+}
+
+.sliderContainer{
+    margin-top: calc(1px + (100vh - 640px) /4);
+}
+
+.inputContainer{
+    display: flex;
+    gap: 10px;
+}
+
+.valueInput{
+    @include inputField;
+    width: 40px;
+    padding: 4px 11px;
+}
+
+.buttonOK{
+    @include mainBtn;
+    padding: 4px 11px;
+    font-size: 14px;
+    
+}
+.mainBtnBox{
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    margin-top: calc(20px + (100vh - 640px) /3);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.button1to1{
+    @include mainBtn;
+    padding: 8px 11px;
+    
+}
+
+.buttonGroup{
+    @include mainBtn;
+    position: relative;
+    border: 2px solid var(--Main-beige, #FCFBF5);
+    background-color:transparent;
+
+}
+
+.buttonGroupHover{
+    @include mainBtn;
+    position: relative;
+    border: 2px solid var(--Main-beige, #FCFBF5);
+    background-color:transparent;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 105%;
+        height: 100%;
+        border-top: 3px solid red; 
+      
+        transform: rotate(17deg);
+        transform-origin: top left;
+    }
+}
+

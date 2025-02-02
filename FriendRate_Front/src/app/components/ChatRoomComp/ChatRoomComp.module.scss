@@ -1,0 +1,12 @@
+.videogrid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 400px;
+    gap: 4px;
+}
+
+.time{
+    color:bisque;
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Welcome back!",
+  "signUp": "SIGN UP",
+  "signIn": "SIGN IN",
+  "email": "Email/Username",
+  "password": "Password",
+  "subTitle": "Please, enter your email or username and password",
+  "plholdPassword": "Enter your password",
+  "forgetPass": "Forget your password?",
+  "error": "Incorrect email or password.",
+  "continue": "Continue",
+  "errorReset": "Try to reset your password first",
+  "textSignIn": "or Sign in with",
+  "linkSignUp": "Sign up!",
+  "linkAccount": "Don`t have an account?"
+}
